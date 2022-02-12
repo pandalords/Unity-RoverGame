@@ -3,7 +3,9 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - CPM
+  - FL
   layers:
   - Default
   - TransparentFX
@@ -13,19 +15,19 @@ TagManager:
   - UI
   - 
   - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
-  - 
+  - CarWheels
+  - CarBody
+  - Head
+  - Ground
+  - Bullet
+  - Zombie
+  - FinishLine
+  - Spike
+  - CheckPoint
+  - BouncePad
+  - Deathbox
+  - Coin
+  - ZoomPad
   - 
   - 
   - 
@@ -40,4 +42,34 @@ TagManager:
   m_SortingLayers:
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Spikes
+    uniqueID: 2181097057
+    locked: 0
+  - name: Ground
+    uniqueID: 3345264113
+    locked: 0
+  - name: Body
+    uniqueID: 1685924531
+    locked: 0
+  - name: BouncePad
+    uniqueID: 1562744321
+    locked: 0
+  - name: Coin
+    uniqueID: 2394667689
+    locked: 0
+  - name: Car
+    uniqueID: 2755237901
+    locked: 0
+  - name: Head
+    uniqueID: 1969994351
+    locked: 0
+  - name: Gun
+    uniqueID: 3174758235
+    locked: 0
+  - name: Bullet
+    uniqueID: 1243940691
+    locked: 0
+  - name: Zombie
+    uniqueID: 2109411665
     locked: 0
