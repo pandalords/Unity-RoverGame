@@ -2867,6 +2867,21 @@ PrefabInstance:
       propertyPath: bouncePadForce
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 6095758259083651654, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
+        type: 3}
+      propertyPath: m_Anchor.x
+      value: -1.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095758259083651654, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: -0.65
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095758259083651655, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
+        type: 3}
+      propertyPath: m_Anchor.y
+      value: -0.65
+      objectReference: {fileID: 0}
     - target: {fileID: 6095758259083651675, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
         type: 3}
       propertyPath: m_RootOrder
