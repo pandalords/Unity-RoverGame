@@ -14,9 +14,12 @@
         [SerializeField] float flipBoost = 20f;
         [SerializeField] float bouncePadForce = 3f;
         [SerializeField] float zoomPadForce = 3f;
-        public float TimeSpeedReduction = 0.3f;
+        [SerializeField] float TimeSpeedReduction = 0.3f;
+        [SerializeField] float TimeSpeedIncrease = 5f;
         public bool isInAir = false;
-        public bool isInSlowMo;
+        public bool isInSlowMo = false;
+        public bool isInAntiGrav = false;
+        public bool isInSpeed = false;
 
         public bool isAlive;
 
@@ -43,6 +46,7 @@
         bool isCarFrameTouchingGround;
         bool hasBegunBackflip = false;
         bool hasCompletedBackflip = false;
+        bool doNotActivateAntiGrav = false;
 
         //bool hasBegunFrontflip = false;
 
@@ -170,6 +174,7 @@
             transform.position = cPM.lastCheckPointPos;
             rb.velocity = new Vector3(0,0,0);
             transform.rotation = Quaternion.identity;
+            ExitAllPickups();
             //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
 
@@ -231,6 +236,52 @@
 
         }
 
+        void SlowMo()
+        {
+            Time.timeScale = TimeSpeedReduction;
+            isInSlowMo = true;
+        }
+
+        void ExitPowerUp()
+        {
+            Time.timeScale = 1f;
+            isInSlowMo = false;
+            isInSpeed = false;
+        }
+
+        void AntiGravity()
+        {
+           if (!(isInAntiGrav && doNotActivateAntiGrav))
+           {
+                rb.gravityScale = -2f;
+                isInAntiGrav = true;
+                doNotActivateAntiGrav = true;
+                Invoke("AntiGravDelay", 0.5f);
+           }
+           else if (isInAntiGrav && doNotActivateAntiGrav)
+           {
+               rb.gravityScale = 1f;
+               isInAntiGrav = false;
+               doNotActivateAntiGrav = true;
+               Invoke("AntiGravDelay", 0.5f);
+           }
+           else
+           {
+               return;
+           }
+           
+        }
+
+        void AntiGravDelay()
+        {
+            doNotActivateAntiGrav = false;
+        }
+
+        void SpeedUp()
+        {
+            Time.timeScale = TimeSpeedIncrease;
+            isInSpeed = true;
+        }
 
         void OnTriggerEnter2D(Collider2D other)
         {
@@ -238,5 +289,28 @@
             {
                 Die();
             }
+            else if (car.IsTouchingLayers(LayerMask.GetMask("SlowMoPickup")))
+            {
+                SlowMo();
+                Invoke("ExitPowerUp", 1f);
+            }
+            else if (car.IsTouchingLayers(LayerMask.GetMask("AntiGravityPickup")))
+            {
+                AntiGravity();
+            }
+            else if (car.IsTouchingLayers(LayerMask.GetMask("SpeedPickup")))
+            {
+                SpeedUp();
+                Invoke("ExitPowerUp", 60f);
+            }
         }
+
+        void ExitAllPickups()
+        {
+            ExitPowerUp();
+            doNotActivateAntiGrav = false;
+            isInAntiGrav = false;
+            rb.gravityScale = 1f;
+        }
+
     }

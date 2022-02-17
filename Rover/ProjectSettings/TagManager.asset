@@ -28,9 +28,9 @@ TagManager:
   - Deathbox
   - Coin
   - ZoomPad
-  - 
-  - 
-  - 
+  - SlowMoPickup
+  - AntiGravityPickup
+  - SpeedPickup
   - 
   - 
   - 
@@ -41,10 +41,13 @@ TagManager:
   - 
   m_SortingLayers:
   - name: Background
-    uniqueID: 2641239031
+    uniqueID: 1579157225
     locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: In-game UI
+    uniqueID: 1144312955
     locked: 0
   - name: Spikes
     uniqueID: 2181097057
@@ -60,6 +63,9 @@ TagManager:
     locked: 0
   - name: Coin
     uniqueID: 2394667689
+    locked: 0
+  - name: Wheels
+    uniqueID: 3626278573
     locked: 0
   - name: Car
     uniqueID: 2755237901
