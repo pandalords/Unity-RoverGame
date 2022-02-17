@@ -2,9 +2,9 @@
 
 ![2D platformer style game](https://github.com/pandalords/Unity-RoverGame/blob/main/Rover/Assets/Assets/Images/Dwights%20Dashv1.png)
 
-[<img alt='Get it on Google Play' src='docs/badges/google-play-badge.png' width="200px"  style="padding:15px"/>](https://play.google.com/store/apps/details?id=com.hyperparticle.nodulus&pcampaignid=MKT-Other-global-all-co-prtnr-py-PartBadge-Mar2515-1 "Get it on Google Play")
-[<img alt='Download on the App Store' src='docs/badges/Download_on_the_App_Store_Badge_US-UK_135x40.svg' width="200px" style="padding:15px"/>](https://itunes.apple.com/us/app/nodulus/id1294238868?ls=1&mt=8 "Download on the App Store")
-[<img alt='Play it online' src='docs/badges/play-online-badge.png' width="200px" style="padding:15px"/>](https://hyperparticle.com/nodulus "Play it online")
+[<img alt='Get it on Google Play' src='docs/badges/google-play-badge.png' width="200px"  style="padding:15px"/>]( "Get it on Google Play")
+[<img alt='Download on the App Store' src='docs/badges/Download_on_the_App_Store_Badge_US-UK_135x40.svg' width="200px" style="padding:15px"/>]( "Download on the App Store")
+[<img alt='Play it online' src='docs/badges/play-online-badge.png' width="200px" style="padding:15px"/>]( "Play it online")
 
 <b>Dwight's Dash</b> is a challenging 2D game based on a theatrical concept. Inspired by the early flash games of the 2000’s Dwights dash is a unique take on the brutal platformer genre; boasting challenging, comical and satisfying gameplay.
 
