@@ -28,9 +28,9 @@ TagManager:
   - Deathbox
   - Coin
   - ZoomPad
-  - 
-  - 
-  - 
+  - SlowMoPickup
+  - AntiGravityPickup
+  - SpeedPickup
   - 
   - 
   - 
