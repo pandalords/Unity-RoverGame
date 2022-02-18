@@ -94,7 +94,6 @@
         void NoClip()
         {
             carNoClip.x = noClipInput.x * noClipSpeed;
-            Debug.Log(carNoClip);
         }
 
         void UseMotor()
@@ -166,7 +165,6 @@
 
                 if (totalAngleRotated > 300 && hasBegunBackflip == true)
                 {
-                    Debug.Log("Flip");
                     hasCompletedBackflip = true;
                     totalAngleRotated = -60;
                     hasBegunBackflip = false;
