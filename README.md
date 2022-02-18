@@ -6,7 +6,7 @@
 [<img alt='Download on the App Store' src='docs/badges/Download_on_the_App_Store_Badge_US-UK_135x40.svg' width="200px" style="padding:15px"/>](https://upload.wikimedia.org/wikipedia/commons/thumb/3/3c/Download_on_the_App_Store_Badge.svg/640px-Download_on_the_App_Store_Badge.svg.png "Download on the App Store")
 [<img alt='Play it online' src='docs/badges/play-online-badge.png' width="200px" style="padding:15px"/>](https://d338t8kmirgyke.cloudfront.net/icons/icon_pngs/000/002/150/original/internet.png "Play it online")
 
-<b>Dwight's Dash</b> is a challenging 2D game based on a theatrical concept. Inspired by the early flash games of the 2000’s Dwights dash is a unique take on the brutal platformer genre; boasting challenging, comical and satisfying gameplay.
+<b>Dwight's Dash</b> is a challenging 2D game based on a theatrical concept. Inspired by the early games of the 2000’s Dwights dash is a unique take on the brutal platformer genre; boasting challenging, comical and satisfying gameplay.
 
 ◉ Original concept - designed and developed by two video game lovers.
 <br>
@@ -36,6 +36,10 @@ For more detailed information, see the [GitHub Wiki](https://github.com/pandalor
 4. 
 5. 
 
+## Development Blog :newspaper:
+
+1.  
+
 ## Credits :clipboard:
 
-Created, designed, and developed by . Music and sound design provided by  and. Please give credit to this project if you use it elsewhere. Open sourced under the [Creative Commons Zero v1.0 Universal](LICENSE.md). 
+Created, designed, and developed by . Music and sound design provided by  and. Please give credit to this project if you use it elsewhere. Open sourced under the [Creative Commons Zero v1.0 Universal](https://github.com/pandalords/Unity-RoverGame/blob/main/LICENSE). 
