@@ -14,8 +14,9 @@
         [SerializeField] float flipBoost = 20f;
         [SerializeField] float bouncePadForce = 3f;
         [SerializeField] float zoomPadForce = 3f;
-        [SerializeField] float TimeSpeedReduction = 0.3f;
-        [SerializeField] float TimeSpeedIncrease = 5f;
+        [SerializeField] float timeSpeedReduction = 0.3f;
+        [SerializeField] float timeSpeedIncrease = 5f;
+        [SerializeField] float noClipSpeed = 25f;
         public bool isInAir = false;
         public bool isInSlowMo = false;
         public bool isInAntiGrav = false;
@@ -33,15 +34,16 @@
 
         CheckPointManager cPM;
 
-        
         Vector2 moveInput;
         Vector2 torqueInput;
+        Vector2 noClipInput;
         
         float previousCarRotation = 0;
         float currentCarRotation = 0;
         float totalAngleRotated;
         float carMovement = 0f;
         float carRotation = 0f;
+        Vector2 carNoClip = new Vector2 (0,0);
         
         bool isCarFrameTouchingGround;
         bool hasBegunBackflip = false;
@@ -65,6 +67,7 @@
         {
             Drive();
             Rotate();
+            NoClip();
             CountFlips();
             Pads();
             CarIsInAir();
@@ -75,6 +78,7 @@
         {
             UseMotor();
             RotateCar();
+            UseNoClip();
         }
 
         void Drive()
@@ -87,6 +91,11 @@
             carRotation = moveInput.y * rotationSpeed;
         }
 
+        void NoClip()
+        {
+            carNoClip.x = noClipInput.x * noClipSpeed;
+            Debug.Log(carNoClip);
+        }
 
         void UseMotor()
         {
@@ -126,6 +135,11 @@
             }
         }
         
+        void UseNoClip()
+        {
+            rb.AddForce(new Vector2 (carNoClip.x, 0));
+        }
+
         void CountFlips()
         {
             if(isInAir)
@@ -172,6 +186,7 @@
         {
             //isAlive = false;
             transform.position = cPM.lastCheckPointPos;
+            //add quaternion to delay one frame to stop car still moving when spawning
             rb.velocity = new Vector3(0,0,0);
             transform.rotation = Quaternion.identity;
             ExitAllPickups();
@@ -190,6 +205,11 @@
             rb.AddForce(transform.right * flipBoost, ForceMode2D.Impulse);
             hasCompletedBackflip = false;
             }
+        }
+
+        void OnDeveloperMode(InputValue value)
+        {
+            noClipInput = value.Get<Vector2>();
         }
 
         void CarIsInAir()
@@ -238,7 +258,7 @@
 
         void SlowMo()
         {
-            Time.timeScale = TimeSpeedReduction;
+            Time.timeScale = timeSpeedReduction;
             isInSlowMo = true;
         }
 
@@ -279,7 +299,7 @@
 
         void SpeedUp()
         {
-            Time.timeScale = TimeSpeedIncrease;
+            Time.timeScale = timeSpeedIncrease;
             isInSpeed = true;
         }
 

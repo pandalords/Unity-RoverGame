@@ -2562,13 +2562,18 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 6095758259083651653, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
         type: 3}
+      propertyPath: carSpeed
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 6095758259083651653, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
+        type: 3}
       propertyPath: bouncePadForce
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 6095758259083651654, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
         type: 3}
       propertyPath: m_Anchor.x
-      value: -1.2
+      value: -0.8
       objectReference: {fileID: 0}
     - target: {fileID: 6095758259083651674, guid: 6c5ac7d7181ef2440ba94823cfd0d11f,
         type: 3}
