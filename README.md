@@ -42,4 +42,4 @@ For more detailed information, see the [GitHub Wiki](https://github.com/pandalor
 
 ## Credits :clipboard:
 
-Created, designed, and developed by . Music and sound design provided by  and. Please give credit to this project if you use it elsewhere. Open sourced under the [Creative Commons Zero v1.0 Universal](https://github.com/pandalords/Unity-RoverGame/blob/main/LICENSE). 
+Created, designed, and developed by Dwight Griffith and Kaelan Leszczewicz. Music and sound design provided by Flynn Martin. Art and visual design provided by... Please give credit to this project if you use it elsewhere. Open sourced under the [Creative Commons Zero v1.0 Universal](https://github.com/pandalords/Unity-RoverGame/blob/main/LICENSE). 
