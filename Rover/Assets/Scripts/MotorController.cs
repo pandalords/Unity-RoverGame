@@ -1,8 +1,9 @@
-﻿    using System.Collections;
+    using System.Collections;
     using System.Collections.Generic;
     using UnityEngine;
     using UnityEngine.InputSystem;
     using UnityEngine.SceneManagement;
+    using System.Threading.Tasks;
 
     public class MotorController : MonoBehaviour
     {
@@ -21,6 +22,7 @@
         public bool isInSlowMo = false;
         public bool isInAntiGrav = false;
         public bool isInSpeed = false;
+        public bool testingMode = false;
 
         public bool isAlive;
 
@@ -31,6 +33,7 @@
         public FrontTireOffGround frontTire;
         public BoxCollider2D carFrame;
         public CapsuleCollider2D car;
+        public Rigidbody2D carPrefab; 
 
         CheckPointManager cPM;
 
@@ -61,6 +64,7 @@
                 transform.position = cPM.lastCheckPointPos;
                 isAlive = true;
             }
+
         }
 
         void Update()
@@ -180,16 +184,43 @@
             }
         }
 
+    
+
         public void Die()
         {
-            //isAlive = false;
-            transform.position = cPM.lastCheckPointPos;
-            //add quaternion to delay one frame to stop car still moving when spawning
-            rb.velocity = new Vector3(0,0,0);
-            transform.rotation = Quaternion.identity;
-            ExitAllPickups();
-            //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+                if (testingMode)
+                {
+                    return;
+                }
+                else
+                {
+                Debug.Log("Dead");
+                gameObject.active = false;
+                transform.position = cPM.lastCheckPointPos;
+                rb.velocity = new Vector3(0,0,0);
+                transform.rotation = Quaternion.identity;
+                ExitAllPickups();
+                gameObject.active = true;
+                }
+                //Destroy(GameObject);
+                //Instantiate(carPrefab, cPM.lastCheckPointPos, Quaternion.identity);
+                //Invoke("DieProcedure" , 0.3f);
+                //isAlive = false;
+                
+                //add quaternion to delay one frame to stop car still moving when spawning
+
+                
+                
+                //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
         }
+
+        //void DieProcedure()
+        //{
+        //    transform.position = cPM.lastCheckPointPos;
+        //    rb.velocity = new Vector3(0,0,0);
+        //    transform.rotation = Quaternion.identity;
+        //    ExitAllPickups();
+        //}
 
         void OnMove(InputValue value)
         {
