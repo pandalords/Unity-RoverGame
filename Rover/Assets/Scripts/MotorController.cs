@@ -49,8 +49,8 @@
         Vector2 carNoClip = new Vector2 (0,0);
         
         bool isCarFrameTouchingGround;
-        bool hasBegunBackflip = false;
-        bool hasCompletedBackflip = false;
+        bool hasBegunFlip = false;
+        bool hasCompletedFlip = false;
         bool doNotActivateAntiGrav = false;
 
         //bool hasBegunFrontflip = false;
@@ -153,37 +153,41 @@
                 
                 currentCarRotation = transform.eulerAngles.z;
                 float theta = Mathf.Abs(currentCarRotation - previousCarRotation);
-                if (theta > 300)
+                if (theta > 300 || theta < -300)
                 {
                     theta = 0;
                 }
-
                 totalAngleRotated += theta;
 
-                //below if statement not working correctly
-                if ((totalAngleRotated > 180) && (transform.eulerAngles.z > 220 && 240 < transform.eulerAngles.z))
+                if ((transform.eulerAngles.z > 170 && 190 > transform.eulerAngles.z))
                 {
-                    hasBegunBackflip = true;
-                    //hasBegunFrontflip = true;
+                    hasBegunFlip = true;
+                    Debug.Log("Flip begun");
                 }
-
-                if (totalAngleRotated > 300 && hasBegunBackflip == true)
+                if (totalAngleRotated > 300 && hasBegunFlip == true)
                 {
-                    hasCompletedBackflip = true;
+                    hasCompletedFlip = true;
                     totalAngleRotated = -60;
-                    hasBegunBackflip = false;
+                    hasBegunFlip = false;
+                    Debug.Log("Flip ready");
                 }
-
                 previousCarRotation = currentCarRotation;
-
-                //Debug.Log(totalAngleRotated);
             }
             else if (!isInAir)
             {
-                totalAngleRotated = 0;
+                Invoke("FlipAllowance", 0.2f);
             }
         }
 
+        void FlipAllowance()
+        {
+            if (!isInAir)
+            {
+                totalAngleRotated = 0;
+                hasBegunFlip = false;
+                hasCompletedFlip = false;
+            }
+        }
     
 
         public void Die()
@@ -229,10 +233,10 @@
 
         void OnFlipBoost(InputValue value)
         {
-            if (hasCompletedBackflip && isInAir)
+            if (hasCompletedFlip && isInAir)
             {
             rb.AddForce(transform.right * flipBoost, ForceMode2D.Impulse);
-            hasCompletedBackflip = false;
+            hasCompletedFlip = false;
             }
         }
 
