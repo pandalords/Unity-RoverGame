@@ -8,10 +8,10 @@ EditorBuildSettings:
   - enabled: 0
     path: Assets/Scenes/BasicKaelan Tutorial.unity
     guid: 0b619e16a489c864b98375ba5124b5df
-  - enabled: 0
+  - enabled: 1
     path: Assets/Scenes/Level 2.unity
     guid: adfce0b9f16d83f428c9f86342e56521
-  - enabled: 1
+  - enabled: 0
     path: Assets/Scenes/The Climb.unity
     guid: 838d4b067f30a754cbabd8ce3d5a9053
   - enabled: 0

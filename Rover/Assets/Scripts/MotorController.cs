@@ -18,13 +18,14 @@
         [SerializeField] float timeSpeedReduction = 0.3f;
         [SerializeField] float timeSpeedIncrease = 5f;
         [SerializeField] float noClipSpeed = 25f;
+        [SerializeField] float flipDelay = 1f;
+        [SerializeField] float flipAllowance = 0.3f;
         public bool isInAir = false;
         public bool isInSlowMo = false;
         public bool isInAntiGrav = false;
         public bool isInSpeed = false;
         public bool testingMode = false;
 
-        public bool isAlive;
 
         public WheelJoint2D backWheel;
         public WheelJoint2D frontWheel;
@@ -50,21 +51,15 @@
         
         bool isCarFrameTouchingGround;
         bool hasBegunFlip = false;
-        bool hasCompletedFlip = false;
+        public bool hasCompletedFlip = false;
         bool doNotActivateAntiGrav = false;
+        bool hasBoostedRecently = false;
 
         //bool hasBegunFrontflip = false;
 
         void Start()
         {
             cPM = GameObject.FindGameObjectWithTag("CPM").GetComponent<CheckPointManager>();
-            
-            if (!isAlive)
-            {
-                transform.position = cPM.lastCheckPointPos;
-                isAlive = true;
-            }
-
         }
 
         void Update()
@@ -164,10 +159,10 @@
                     hasBegunFlip = true;
                     Debug.Log("Flip begun");
                 }
-                if (totalAngleRotated > 300 && hasBegunFlip == true)
+                if (totalAngleRotated > 260 && hasBegunFlip == true && hasBoostedRecently == false)
                 {
                     hasCompletedFlip = true;
-                    totalAngleRotated = -60;
+                    totalAngleRotated = -100;
                     hasBegunFlip = false;
                     Debug.Log("Flip ready");
                 }
@@ -175,7 +170,7 @@
             }
             else if (!isInAir)
             {
-                Invoke("FlipAllowance", 0.2f);
+                Invoke("FlipAllowance", flipAllowance);
             }
         }
 
@@ -186,6 +181,7 @@
                 totalAngleRotated = 0;
                 hasBegunFlip = false;
                 hasCompletedFlip = false;
+                hasBoostedRecently = false;
             }
         }
     
@@ -199,12 +195,12 @@
                 else
                 {
                 Debug.Log("Dead");
-                gameObject.active = false;
+                //gameObject.active = false;
                 transform.position = cPM.lastCheckPointPos;
                 rb.velocity = new Vector3(0,0,0);
                 transform.rotation = Quaternion.identity;
                 ExitAllPickups();
-                gameObject.active = true;
+                //gameObject.active = true;
                 }
                 //Destroy(GameObject);
                 //Instantiate(carPrefab, cPM.lastCheckPointPos, Quaternion.identity);
@@ -237,7 +233,14 @@
             {
             rb.AddForce(transform.right * flipBoost, ForceMode2D.Impulse);
             hasCompletedFlip = false;
+            hasBoostedRecently = true;
+            Invoke("FlipBoostDelay", flipDelay);
             }
+        }
+
+        void FlipBoostDelay()
+        {
+            hasBoostedRecently = false;
         }
 
         void OnDeveloperMode(InputValue value)
