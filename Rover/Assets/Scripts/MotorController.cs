@@ -55,8 +55,6 @@
         bool doNotActivateAntiGrav = false;
         bool hasBoostedRecently = false;
 
-        //bool hasBegunFrontflip = false;
-
         void Start()
         {
             cPM = GameObject.FindGameObjectWithTag("CPM").GetComponent<CheckPointManager>();
