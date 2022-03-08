@@ -126,3 +126,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   flag: {fileID: 1701200870868092252}
   loadNextLevel: 1
+  levelCompleteBox: {fileID: 0}
+  animator: {fileID: 0}
+  levelCompleteText: {fileID: 0}
+  MC: {fileID: 0}

@@ -25,6 +25,7 @@
         public bool isInAntiGrav = false;
         public bool isInSpeed = false;
         public bool testingMode = false;
+        public bool levelFinished = false;
 
 
         public WheelJoint2D backWheel;
@@ -95,7 +96,7 @@
 
         void UseMotor()
         {
-            if (carMovement == 0f)
+            if (carMovement == 0f || levelFinished)
             {
             backWheel.useMotor = false;
             frontWheel.useMotor = false;
@@ -112,7 +113,11 @@
 
         void RotateCar()
         {
-            if (!isInSlowMo && carRotation != 0f)
+            if (levelFinished)
+            {
+                return;
+            }
+            else if (!isInSlowMo && carRotation != 0f)
             {
                 float totalRotation = (carRotation * rotationSpeed * Time.deltaTime) / regularTimeRotationMultiplier;
                 transform.Rotate (0,0,totalRotation);
@@ -186,7 +191,7 @@
 
         public void Die()
         {
-                if (testingMode)
+                if (testingMode || levelFinished)
                 {
                     return;
                 }
@@ -227,6 +232,10 @@
 
         void OnFlipBoost(InputValue value)
         {
+            if (levelFinished)
+            {
+                return;
+            }
             if (hasCompletedFlip && isInAir)
             {
             rb.AddForce(transform.right * flipBoost, ForceMode2D.Impulse);

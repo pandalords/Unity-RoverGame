@@ -65,11 +65,11 @@ TagManager:
   - name: Coin
     uniqueID: 2394667689
     locked: 0
-  - name: Wheels
-    uniqueID: 3626278573
-    locked: 0
   - name: Car
     uniqueID: 2755237901
+    locked: 0
+  - name: Wheels
+    uniqueID: 3626278573
     locked: 0
   - name: Head
     uniqueID: 1969994351
