@@ -26,6 +26,8 @@
         public bool isInSpeed = false;
         public bool testingMode = false;
         public bool levelFinished = false;
+        public bool hasActivatedACheckpoint = false;
+        public bool hasDied = false;
 
 
         public WheelJoint2D backWheel;
@@ -160,14 +162,14 @@
                 if ((transform.eulerAngles.z > 170 && 190 > transform.eulerAngles.z))
                 {
                     hasBegunFlip = true;
-                    Debug.Log("Flip begun");
+                    //Debug.Log("Flip begun");
                 }
                 if (totalAngleRotated > 260 && hasBegunFlip == true && hasBoostedRecently == false)
                 {
                     hasCompletedFlip = true;
                     totalAngleRotated = -100;
                     hasBegunFlip = false;
-                    Debug.Log("Flip ready");
+                    //Debug.Log("Flip ready");
                 }
                 previousCarRotation = currentCarRotation;
             }
@@ -198,11 +200,13 @@
                 else
                 {
                 Debug.Log("Dead");
+                hasDied = true;
                 //gameObject.active = false;
                 transform.position = cPM.lastCheckPointPos;
                 rb.velocity = new Vector3(0,0,0);
                 transform.rotation = Quaternion.identity;
                 ExitAllPickups();
+                Invoke("hasNotDied", 0.1f);
                 //gameObject.active = true;
                 }
                 //Destroy(GameObject);
@@ -215,6 +219,11 @@
                 
                 
                 //SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+        }
+
+        void hasNotDied()
+        {
+            hasDied = false;
         }
 
         //void DieProcedure()

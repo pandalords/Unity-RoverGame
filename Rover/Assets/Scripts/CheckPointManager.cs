@@ -6,21 +6,31 @@ public class CheckPointManager : MonoBehaviour
 {
 
     public Vector2 lastCheckPointPos;
-    private static CheckPointManager instance;
+    public GameObject checkpoint1;
+    public GameObject checkpoint2;
+    //private static CheckPointManager instance;
     //FinishLine fl;
     //GameObject car;
 
     void Awake()
     {
-        if (instance == null)
-        {
-            instance = this;
-            DontDestroyOnLoad(instance);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
+        //if (instance == null)
+        //{
+        //    instance = this;
+        //    DontDestroyOnLoad(instance);
+        //}
+        //else
+        //{
+        //    Destroy(gameObject);
+        //}
+
+        //Transform checkpointsTransfrom = transform.Find("Checkpoints");
+
+        //foreach (Transform checkpointSingleTransform in checkpointsTransfrom)
+        //{
+        //    Debug.Log(checkpointSingleTransform);
+        //}
+
     }
 
     void Start()

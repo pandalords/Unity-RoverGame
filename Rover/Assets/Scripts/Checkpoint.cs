@@ -7,6 +7,7 @@ public class Checkpoint : MonoBehaviour
 
     public CheckPointManager checkPointManager;
     public BoxCollider2D fuelCanister;
+    public MotorController MC;
 
     // Update is called once per frame
     void Update()
@@ -18,6 +19,7 @@ public class Checkpoint : MonoBehaviour
     {
         if (fuelCanister.IsTouchingLayers(LayerMask.GetMask("CarBody")))
         {
+            MC.hasActivatedACheckpoint = true;
             checkPointManager.lastCheckPointPos = transform.position;
             Destroy(gameObject);
         }

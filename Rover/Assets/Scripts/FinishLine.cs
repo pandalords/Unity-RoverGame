@@ -13,8 +13,10 @@ public class FinishLine : MonoBehaviour
     
     public GameObject levelCompleteBox;
     public Animator animator;
+    public GrassCount GC;
     //public TMP_Text levelCompleteText;
     public MotorController MC;
+    public TextMeshProUGUI timeText;
     
     public void LevelCompletePopUp()
     {
@@ -44,6 +46,7 @@ public class FinishLine : MonoBehaviour
        { 
         levelCompleteBox.SetActive(true);
         MC.levelFinished = true;
+        timeText.text = "Time: " + GC.timerText.text;
        }  
     }
 
