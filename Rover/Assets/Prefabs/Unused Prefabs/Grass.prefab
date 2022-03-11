@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &1701200870868092255
+--- !u!1 &799486610987982481
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,39 +8,65 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 1701200870868092322}
-  - component: {fileID: 1701200870868092253}
-  - component: {fileID: 1701200870868092252}
-  - component: {fileID: 1701200870868092323}
-  m_Layer: 14
-  m_Name: FinishLine
-  m_TagString: FL
+  - component: {fileID: 2606944176726092625}
+  - component: {fileID: 2514982858315403294}
+  - component: {fileID: 2055863819676387126}
+  - component: {fileID: 6067206884738319134}
+  m_Layer: 0
+  m_Name: Grass
+  m_TagString: Grass
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &1701200870868092322
+--- !u!4 &2606944176726092625
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701200870868092255}
+  m_GameObject: {fileID: 799486610987982481}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 13.45, y: -6.15, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalPosition: {x: -4.755, y: -2.4121, z: 0}
+  m_LocalScale: {x: 0.08281366, y: 0.2799011, z: 1.2212099}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &1701200870868092253
+--- !u!61 &2514982858315403294
+BoxCollider2D:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 799486610987982481}
+  m_Enabled: 1
+  m_Density: 1
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_UsedByEffector: 0
+  m_UsedByComposite: 0
+  m_Offset: {x: -0.24804401, y: -3.4406786}
+  m_SpriteTilingProperty:
+    border: {x: 0, y: 1.5799999, z: 0, w: 0}
+    pivot: {x: 0.5, y: 0.5}
+    oldSize: {x: 12, y: 10.64}
+    newSize: {x: 12, y: 10.64}
+    adaptiveTilingThreshold: 0.5
+    drawMode: 0
+    adaptiveTiling: 0
+  m_AutoTiling: 0
+  serializedVersion: 2
+  m_Size: {x: 11.417824, y: 2.042631}
+  m_EdgeRadius: 0
+--- !u!212 &2055863819676387126
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701200870868092255}
+  m_GameObject: {fileID: 799486610987982481}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -75,58 +101,27 @@ SpriteRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Sprite: {fileID: 21300000, guid: 8a9356ab3269fef45ae1fbf21c9f4b36, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 93f5ebd5d379814429f0b015d9287661, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
   m_FlipY: 0
   m_DrawMode: 0
-  m_Size: {x: 0.32, y: 1.28}
+  m_Size: {x: 12, y: 10.64}
   m_AdaptiveModeThreshold: 0.5
   m_SpriteTileMode: 0
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!61 &1701200870868092252
-BoxCollider2D:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701200870868092255}
-  m_Enabled: 1
-  m_Density: 1
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_UsedByEffector: 0
-  m_UsedByComposite: 0
-  m_Offset: {x: 0.08507903, y: -68.156845}
-  m_SpriteTilingProperty:
-    border: {x: 0, y: 0, z: 0, w: 0}
-    pivot: {x: 0.5, y: 0.5}
-    oldSize: {x: 0.32, y: 1.28}
-    newSize: {x: 0.32, y: 1.28}
-    adaptiveTilingThreshold: 0.5
-    drawMode: 0
-    adaptiveTiling: 0
-  m_AutoTiling: 0
-  serializedVersion: 2
-  m_Size: {x: 0.14984193, y: 309.8448}
-  m_EdgeRadius: 0
---- !u!114 &1701200870868092323
+--- !u!114 &6067206884738319134
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1701200870868092255}
+  m_GameObject: {fileID: 799486610987982481}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: dfab046d0b35a53498d7fc8a25ffc561, type: 3}
+  m_Script: {fileID: 11500000, guid: e7c8adaad4600794198160a9dfc3227e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  flag: {fileID: 1701200870868092252}
-  levelCompleteBox: {fileID: 0}
-  animator: {fileID: 0}
-  GC: {fileID: 0}
-  MC: {fileID: 0}
-  timeText: {fileID: 0}
+  grass: {fileID: 2514982858315403294}

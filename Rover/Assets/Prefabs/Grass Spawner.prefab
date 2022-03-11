@@ -47,4 +47,6 @@ MonoBehaviour:
   numberOfDecimalsInCountDown: 1
   counterText: {fileID: 0}
   timerText: {fileID: 0}
+  MC: {fileID: 0}
+  levelCompleteTime: 0
   roundedTotalTime: 0

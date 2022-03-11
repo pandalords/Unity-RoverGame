@@ -20,7 +20,7 @@ public class Flames : MonoBehaviour
         if (MC.hasCompletedFlip == true)
         {
             flames.enabled = true;
-            Debug.Log ("Flames");
+            //Debug.Log ("Flames");
         }
         else
         {
