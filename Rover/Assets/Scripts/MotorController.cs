@@ -98,7 +98,7 @@
 
         void UseMotor()
         {
-            if (carMovement == 0f || levelFinished)
+            if (carMovement == 0f || levelFinished || isInAir)
             {
             backWheel.useMotor = false;
             frontWheel.useMotor = false;
