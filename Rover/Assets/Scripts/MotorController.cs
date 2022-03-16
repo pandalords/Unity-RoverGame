@@ -382,7 +382,7 @@
             ExitPowerUp();
             doNotActivateAntiGrav = false;
             isInAntiGrav = false;
-            rb.gravityScale = 1f;
+            rb.gravityScale = 1.2f;
         }
 
     }

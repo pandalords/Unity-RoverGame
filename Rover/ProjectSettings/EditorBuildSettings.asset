@@ -6,26 +6,29 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/Main Menu.unity
+    path: Assets/Scenes/Old Levels/Main Menu.unity
     guid: 777ffd0fc8b416844ab24829b982a147
-  - enabled: 1
-    path: Assets/Scenes/BasicKaelan Tutorial.unity
+  - enabled: 0
+    path: Assets/Scenes/Old Levels/BasicKaelan Tutorial.unity
     guid: 0b619e16a489c864b98375ba5124b5df
-  - enabled: 1
-    path: Assets/Scenes/Tutorial.unity
+  - enabled: 0
+    path: Assets/Scenes/Old Levels/Tutorial.unity
     guid: de0309b5b8999884e9a7eb03217f1452
-  - enabled: 1
-    path: Assets/Scenes/Level 1.unity
+  - enabled: 0
+    path: Assets/Scenes/Old Levels/Level 1.unity
     guid: 87cda2dca974b4e4392a806725136f46
-  - enabled: 1
-    path: Assets/Scenes/Level 2.unity
+  - enabled: 0
+    path: Assets/Scenes/Old Levels/Level 2.unity
     guid: adfce0b9f16d83f428c9f86342e56521
-  - enabled: 1
-    path: Assets/Scenes/The Climb.unity
+  - enabled: 0
+    path: Assets/Scenes/Old Levels/The Climb.unity
     guid: 838d4b067f30a754cbabd8ce3d5a9053
-  - enabled: 1
-    path: Assets/Scenes/Sample Scene.unity
+  - enabled: 0
+    path: Assets/Scenes/Old Levels/Sample Scene.unity
     guid: 2cda990e2423bbf4892e6590ba056729
+  - enabled: 1
+    path: Assets/Scenes/Blobby.unity
+    guid: 2312e5ebcc5f41f44973f4d9add8d55f
   m_configObjects:
     com.unity.input.settings: {fileID: 11400000, guid: fb85e89cbe1436a48bc7eb3a7648895f,
       type: 2}
